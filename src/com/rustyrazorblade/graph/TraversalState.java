@@ -1,9 +1,6 @@
 package com.rustyrazorblade.graph;
 
-import sun.awt.image.ImageWatched;
-
 import java.util.LinkedList;
-import java.util.List;
 import java.util.function.Function;
 
 /**
