@@ -20,9 +20,10 @@ public class TraversalState {
         this.paths = paths;
     }
 
-    public TraversalState outV(String label) {
+    public TraversalState outV(String ... labels) {
+        for(Path p: paths) {
 
-        //return traversal(x -> x);
+        }
         return new TraversalState(root);
     }
 

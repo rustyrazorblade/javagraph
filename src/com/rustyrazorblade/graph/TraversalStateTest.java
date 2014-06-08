@@ -34,4 +34,10 @@ public class TraversalStateTest {
     public void testTraversal() throws Exception {
         TraversalState state = v1.query().outV("likes");
     }
+
+    @Test
+    public void testRootPathProperlySet() throws Exception {
+        TraversalState t = v1.query();
+        assertEquals(1, t.paths.size());
+    }
 }

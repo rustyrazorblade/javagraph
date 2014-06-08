@@ -28,7 +28,7 @@ public class VertexTest {
         assertEquals(e.in, v);
         assertEquals(e.out, v2);
 
-        Edge e2 = v.in_edges.get(0);
+        Edge e2 = v2.in_edges.get(0);
         Edge e3 = v.out_edges.get(0);
 
         assertEquals(e, e2);
@@ -48,8 +48,28 @@ public class VertexTest {
     }
 
     @Test
+    public void testInE() throws Exception {
+        Edge[] edges = v.inE();
+        assertEquals(0, edges.length);
+
+        edges = v2.inE();
+        assertEquals(1, edges.length);
+    }
+
+    @Test
+    public void testOutE() throws Exception {
+        Edge[] edges = v.outE();
+        assertEquals(1, edges.length);
+
+        edges = v2.outE();
+        assertEquals(0, edges.length);
+    }
+
+    @Test
     public void testQuery() throws Exception {
         Vertex v = new Vertex();
         TraversalState t = v.query();
+
+        t.outV();
     }
 }

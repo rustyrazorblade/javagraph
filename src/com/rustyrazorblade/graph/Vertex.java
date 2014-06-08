@@ -1,5 +1,7 @@
 package com.rustyrazorblade.graph;
 
+import sun.awt.image.ImageWatched;
+
 import java.util.LinkedList;
 import java.util.List;
 import java.util.UUID;
@@ -43,6 +45,24 @@ public class Vertex extends Element {
             vertices.add(e.in);
         }
         return vertices.toArray(new Vertex[vertices.size()]);
+    }
+
+    public Edge[] inE(String ... labels) {
+        LinkedList<Edge> edges = new LinkedList<>();
+        for(Edge e: in_edges) {
+            edges.add(e);
+        }
+
+        return edges.toArray(new Edge[edges.size()]);
+    }
+
+    public Edge[] outE(String ... labels) {
+        LinkedList<Edge> edges = new LinkedList<>();
+        for(Edge e: out_edges) {
+            edges.add(e);
+        }
+
+        return edges.toArray(new Edge[edges.size()]);
     }
 
 }
