@@ -26,8 +26,23 @@ public class Vertex extends Element {
     public Edge addEdge(String label, Vertex v) {
         Edge e = new Edge(label, this, v);
         this.out_edges.add(e);
-        this.in_edges.add(e);
+        v.in_edges.add(e);
         return e;
+    }
+    public Vertex[] outV(String ... labels) {
+        LinkedList<Vertex> vertices = new LinkedList<Vertex>();
+        for(Edge e: out_edges) {
+            vertices.add(e.out);
+        }
+        return vertices.toArray(new Vertex[vertices.size()]);
+    }
+
+    public Vertex[] inV(String ... labels) {
+        LinkedList<Vertex> vertices = new LinkedList<Vertex>();
+        for(Edge e: in_edges) {
+            vertices.add(e.in);
+        }
+        return vertices.toArray(new Vertex[vertices.size()]);
     }
 
 }

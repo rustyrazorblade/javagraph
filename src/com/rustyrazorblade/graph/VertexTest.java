@@ -8,9 +8,14 @@ import static org.junit.Assert.*;
 
 public class VertexTest {
 
+    Vertex v, v2;
+    Edge e;
+
     @Before
     public void setUp() throws Exception {
-
+        v = new Vertex();
+        v2 = new Vertex();
+        e = v.addEdge("knows", v2);
     }
 
     @After
@@ -20,9 +25,6 @@ public class VertexTest {
 
     @Test
     public void testAddEdge() throws Exception {
-        Vertex v = new Vertex();
-        Vertex v2 = new Vertex();
-        Edge e = v.addEdge("knows", v2);
         assertEquals(e.in, v);
         assertEquals(e.out, v2);
 
@@ -31,6 +33,18 @@ public class VertexTest {
 
         assertEquals(e, e2);
         assertEquals(e, e3);
+    }
+
+    @Test
+    public void testOutV() throws Exception {
+        Vertex[] results = v.outV();
+        assertEquals(results[0], v2);
+    }
+
+    @Test
+    public void testInV() throws Exception {
+        Vertex[] results = v2.inV();
+        assertEquals(results[0], v);
     }
 
     @Test

@@ -22,7 +22,8 @@ public class TraversalState {
 
     public TraversalState outV(String label) {
 
-        return this;
+        //return traversal(x -> x);
+        return new TraversalState(root);
     }
 
     public TraversalState traversal(Function<Vertex, Path[]> t) {
@@ -32,6 +33,8 @@ public class TraversalState {
         for(Path p: paths) {
             Element e = p.path.getLast();
         }
+        // start with the current end of every path
+        // perform the t op on every element
         return new TraversalState(this.root);
 
     }
