@@ -12,8 +12,10 @@ public class TraversalStateTest {
     @Before
     public void setUp() throws Exception {
         g = new Graph();
-        g.addVertex();
-        g.addVertex();
+        Vertex v1 = g.addVertex();
+        Vertex v2 = g.addVertex();
+
+        v1.addEdge("likes", v2);
     }
 
     @After

@@ -32,4 +32,10 @@ public class VertexTest {
         assertEquals(e, e2);
         assertEquals(e, e3);
     }
+
+    @Test
+    public void testQuery() throws Exception {
+        Vertex v = new Vertex();
+        TraversalState t = v.query();
+    }
 }
