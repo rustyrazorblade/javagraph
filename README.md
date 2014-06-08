@@ -1,0 +1,1 @@
+This is a sandbox to learn java.  Do not use it as a reference for the right way to do things (it's likely not).  I'm just screwing around, and i'm hacking things together for fun, not for actual use.  It's more than likely even looking at this code will cause your head to explode.
